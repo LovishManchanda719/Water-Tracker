@@ -22,16 +22,8 @@ const SETTINGS_COLLECTION = 'settings';
 
 // Generate a unique user ID (in a real app, you would get this from authentication)
 const getUserId = (): string => {
-  // Check if we already have a userId in localStorage
-  const savedUserId = localStorage.getItem('waterTrackerUserId');
-  if (savedUserId) {
-    return savedUserId;
-  }
-  
-  // Generate a new userId
-  const newUserId = `user_${Date.now()}`;
-  localStorage.setItem('waterTrackerUserId', newUserId);
-  return newUserId;
+  // Always return the same fixed ID since only one user will use this app
+  return 'single_user_fixed_id';
 };
 
 // Save user settings (daily goal, bottle size)
