@@ -4,9 +4,14 @@ import React from 'react';
 import Header from './components/Header';
 import DailySummary from './components/DailySummary';
 import AddWater from './components/AddWater';
+import AddMilk from './components/AddMilk';
+import AddCurd from './components/AddCurd';
+import AddEgg from './components/AddEgg';
 import WaterChart from './components/WaterChart';
+import MilkChart from './components/MilkChart';
+import ProteinChart from './components/ProteinChart';
 import Settings from './components/Settings';
-import WaterEntries from './components/WaterEntries';
+import DrinkEntries from './components/WaterEntries';
 import LoadingSpinner from './components/LoadingSpinner';
 import { WaterProvider, useWaterTracker } from './context/WaterContext';
 
@@ -28,12 +33,17 @@ const WaterTrackerContent: React.FC = () => {
           <div className="md:col-span-2 space-y-6">
             <DailySummary />
             <WaterChart />
+            <MilkChart />
+            <ProteinChart />
           </div>
           
           {/* Sidebar - 1/3 width on desktop */}
           <div className="space-y-6">
             <AddWater />
-            <WaterEntries />
+            <AddMilk />
+            <AddCurd />
+            <AddEgg />
+            <DrinkEntries />
             <Settings />
           </div>
         </div>
@@ -41,7 +51,7 @@ const WaterTrackerContent: React.FC = () => {
       
       <footer className="py-4 text-center text-sm text-gray-500">
         <div className="container">
-          <p>Water Tracker App &copy; {new Date().getFullYear()}</p>
+          <p>Water & Milk Tracker App &copy; {new Date().getFullYear()}</p>
         </div>
       </footer>
     </div>
